@@ -1,0 +1,14 @@
+--- a/mxaot.c
++++ b/mxaot.c
+@@ -4077,7 +4077,11 @@ int mxaot(argc,argv)
+     if (parmwait && boolqryp != NULL) {
+         do {
+-            printf(prompt2p); isxp=gets(line); p=isxp;
++            printf(prompt2p); 
++            isxp=fgets(line, sizeof(line), stdin); 
++            if (isxp && isxp[strlen(isxp)-1] == '\n') 
++                isxp[strlen(isxp)-1] = '\0';
++            p=isxp;
+             if (!p) break;
+         } while (!*p);
+         if (ISX(p) || !p)
