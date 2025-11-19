@@ -1,0 +1,74 @@
+name: Release CISIS Binaries
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            arch: amd64
+            target: linux-amd64
+          - os: ubuntu-latest  
+            arch: arm64
+            target: linux-arm64
+            cross: true
+          - os: macos-13
+            arch: amd64
+            target: darwin-amd64
+          - os: macos-latest
+            arch: arm64
+            target: darwin-arm64
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup cross-compilation (Linux ARM64)
+      if: matrix.cross
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-aarch64-linux-gnu
+        export CC=aarch64-linux-gnu-gcc
+    
+    - name: Build CISIS
+      run: |
+        if [ "${{ matrix.cross }}" = "true" ]; then
+          export CC=aarch64-linux-gnu-gcc
+        fi
+        ./generateApp64.sh
+        
+    - name: Package binary
+      run: |
+        mkdir -p release
+        cp mx release/mx-${{ matrix.target }}
+        chmod +x release/mx-${{ matrix.target }}
+        
+        # Create archive with version info
+        cd release
+        echo "CISIS v${GITHUB_REF#refs/tags/} - ${{ matrix.target }}" > VERSION
+        tar -czf cisis-${{ matrix.target }}.tar.gz mx-${{ matrix.target }} VERSION
+        
+    - name: Upload to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release/cisis-${{ matrix.target }}.tar.gz
+        body: |
+          CISIS Multi-Architecture Release
+          
+          Binaries available for:
+          - Linux AMD64 (Intel/AMD x86_64)
+          - Linux ARM64 (ARM64v8, Graviton, Apple Silicon)
+          - macOS Intel (x86_64)
+          - macOS Apple Silicon (ARM64)
+          
+          Download the appropriate binary for your platform.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

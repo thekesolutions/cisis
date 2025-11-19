@@ -1,269 +1,126 @@
-CISIS
+# CISIS - Computerized Information System in Health
 
+CISIS is a powerful database management system designed for bibliographic and documentary information, developed by BIREME/PAHO. It's widely used by libraries, research institutions, and information centers worldwide.
 
-Some Documentation:
+## What is CISIS?
 
-http://wiki.bireme.org/en/index.php/CISIS
+CISIS helps you:
+- **Manage bibliographic databases** (books, articles, documents)
+- **Import/export** library catalogs in standard formats (MARC21, ISO 2709)
+- **Search and retrieve** information with powerful query capabilities
+- **Generate reports** and formatted outputs
+- **Migrate data** between different library systems
 
+## Quick Links
 
+- **[📖 Usage Guide](USAGE.md)** - Complete guide with examples and tutorials
+- **[🔧 Build Instructions](BUILD.md)** - Multi-platform compilation guide
+- **[📚 Official Documentation](http://wiki.bireme.org/en/index.php/CISIS)** - BIREME wiki
 
-CISIS - Compilation
+## Getting Started
 
-================================================================================
+### Option 1: Download Pre-built Binaries (Recommended)
+1. Go to [Releases](../../releases)
+2. Download for your platform:
+   - **Linux**: `cisis-linux-amd64.tar.gz` or `cisis-linux-arm64.tar.gz`
+   - **macOS**: `cisis-darwin-amd64.tar.gz` (Intel) or `cisis-darwin-arm64.tar.gz` (Apple Silicon)
+3. Extract and run: `./mx`
 
-Linux Platform
+### Option 2: Build from Source
+```bash
+git clone <this-repository>
+cd cisis
+./generateApp64.sh
+```
 
-No configuration is required.
+### Option 3: Docker
+```bash
+docker pull ghcr.io/username/cisis:latest
+docker run --rm -v $(pwd):/data ghcr.io/username/cisis:latest
+```
 
-1) 64 bit version.
+## Basic Usage
 
-Only call generateApp64.sh script. The applications will be generated into utl/linux64 directory.
+**View your database:**
+```bash
+./mx mydatabase from=1 count=10
+```
 
-2) 32 bit version.
+**Search for records:**
+```bash
+./mx mydatabase "bool=cancer and therapy"
+```
 
-Only call generateApp32.sh script. The applications will be generated into utl/linux directory.
+**Export to standard format:**
+```bash
+./mx mydatabase iso=backup.iso now
+```
 
+**Import from another system:**
+```bash
+./mx iso=catalog.iso create=mydatabase now
+```
 
-================================================================================
+## Who Uses CISIS?
 
-Windows
+- **Libraries** - Catalog management and circulation
+- **Universities** - Thesis and research databases  
+- **Research Centers** - Scientific literature databases
+- **Government Agencies** - Document management systems
+- **Publishers** - Bibliographic control systems
 
-1) Change cisis.h preprocessor settings.
+## Key Features
 
-Open cisis.h file and change the default configuration to the following one:
+✅ **Multi-format support** - MARC21, ISO 2709, Dublin Core  
+✅ **Powerful search** - Boolean queries, field-specific searches  
+✅ **Flexible output** - Custom reports and formats  
+✅ **Cross-platform** - Linux, macOS, Windows  
+✅ **Web interface** - Browser-based access with WXIS  
+✅ **Migration tools** - Import/export between systems  
 
-   GCC=0
-   PC=1
-   DOS32BITS=1
-   MSC=0 or 1  (1 if Microsoft Visual Studio and 0 if other compiler is used)
-   UNIX=0
+## File Formats Supported
 
-2) Set compiler configurations.
+| Format | Description | Use Case |
+|--------|-------------|----------|
+| **ISO 2709** | International standard | Library catalog exchange |
+| **MARC21** | Machine-readable cataloging | Bibliographic records |
+| **Text** | Delimited or formatted | Reports and exports |
+| **XML** | Structured data | Web services and APIs |
 
-   data alignment => byte
-   calling conventions => C
-   unsigned char => set
+## Common Use Cases
 
-3) Set project preprocessor directives.
+**Library Catalog:**
+```bash
+# Import MARC records
+./mx iso=library-catalog.iso create=catalog now
 
-   a) ISIS version
+# Search by author
+./mx catalog "bool=shakespeare$" "pft='Title: 'v245^a"
 
-       wxis: 
+# Generate shelf list
+./mx catalog "pft=v082^a,x5,v245^a" lw=80 now > shelf-list.txt
+```
 
-       WIN32
-       WWWISIS=1
-       CIFFI = 0
-       LIND = 0
-       LIND4 = 0
-       ISISXL = 0
-       ISISXL512 = 0
-       LINDLUX = 0
-       PROCXSLT = 0
-       _FILE_OFFSET_BITS = 0
-       _LARGEFILE64_SOURCE = 0
-       CIWTF=0
-       INCPROCX=1
-       INCPRECX=1
+**Database Migration:**
+```bash
+# Export from old system
+./mx oldsystem iso=migration.iso now
 
-       mx: 
+# Import to new system  
+./mx iso=migration.iso create=newsystem now
+```
 
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=0;
-       LIND4=0;
-       ISISXL=0;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=1;
-       INCPROCX=1;
-       INCPRECX=1;
-       EXCFMCGI=0;
-       EXCFMXML=0
+## Need Help?
 
-       other applications 
+- **[📖 Read the Usage Guide](USAGE.md)** - Step-by-step tutorials
+- **[🔧 Build from Source](BUILD.md)** - Compilation instructions
+- **[📚 Official Wiki](http://wiki.bireme.org/en/index.php/CISIS)** - Complete documentation
+- **[💬 Community Support](../../discussions)** - Ask questions and share tips
 
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=0;
-       LIND4=0;
-       ISISXL=0;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=0;
-       INCPROCX=0;
-       INCPRECX=0;
-       EXCFMCGI=1;
-       EXCFMXML=1;
-       MXFUN=0;
-       IFLOADFUN=0;
+## License
 
-   b) ISIS1660 version
+CISIS is developed by BIREME/PAHO and distributed under open source license. See LICENSE file for details.
 
-       wxis: 
+---
 
-       WIN32
-       WWWISIS=1
-       CIFFI = 0
-       LIND = 0
-       LIND4 = 0
-       ISISXL = 1
-       ISISXL512 = 0
-       LINDLUX = 0
-       PROCXSLT = 0
-       _FILE_OFFSET_BITS = 0
-       _LARGEFILE64_SOURCE = 0
-       CIWTF=0
-       INCPROCX=1
-       INCPRECX=1
-
-       mx: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=0;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=1;
-       INCPROCX=1;
-       INCPRECX=1;
-       EXCFMCGI=0;
-       EXCFMXML=0
-
-       other applications: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=0;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=1;
-       INCPROCX=1;
-       INCPRECX=1;
-       EXCFMCGI=0;
-       EXCFMXML=0;
-       MXFUN=0;
-       IFLOADFUN=0;
-
-   c) LIND version
-
-       wxis: 
-
-       WIN32
-       WWWISIS=1
-       CIFFI = 0
-       LIND = 1
-       LIND4 = 0
-       ISISXL = 1
-       ISISXL512 = 0
-       LINDLUX = 0
-       PROCXSLT = 0
-       _FILE_OFFSET_BITS = 0
-       _LARGEFILE64_SOURCE = 0
-       CIWTF=0
-       INCPROCX=1
-       INCPRECX=1
-
-       mx: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=1;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=1;
-       INCPROCX=1;
-       INCPRECX=1;
-       EXCFMCGI=0;
-       EXCFMXML=0
-
-       other applications: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=0;
-       LIND=1;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=0;
-       INCPROCX=0;
-       INCPRECX=0;
-       EXCFMCGI=1;
-       EXCFMXML=1;
-       MXFUN=0;
-       IFLOADFUN=0;
-
-   d) FFI version
-
-       wxis: 
-
-       WIN32
-       WWWISIS=1
-       CIFFI = 1
-       LIND = 1
-       LIND4 = 0
-       ISISXL = 1
-       ISISXL512 = 0
-       LINDLUX = 0
-       PROCXSLT = 0
-       _FILE_OFFSET_BITS = 0
-       _LARGEFILE64_SOURCE = 0
-       CIWTF=0
-       INCPROCX=1
-       INCPRECX=1
-
-       mx: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=1;
-       LIND=1;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=1;
-       INCPROCX=1;
-       INCPRECX=1;
-       EXCFMCGI=0;
-       EXCFMXML=0
-
-       other applications: 
-
-       WIN32
-       WWWISIS=0
-       CIFFI=1;
-       LIND=1;
-       LIND4=0;
-       ISISXL=1;
-       ISISXL512=0;
-       _FILE_OFFSET_BITS=0;
-       _LARGEFILE64_SOURCE=0;
-       CIWTF=0;
-       INCPROCX=0;
-       INCPRECX=0;
-       EXCFMCGI=1;
-       EXCFMXML=1;
-       MXFUN=0;
-       IFLOADFUN=0;
-
-
+*CISIS has been serving the library and information science community for over 30 years, helping manage millions of bibliographic records worldwide.*

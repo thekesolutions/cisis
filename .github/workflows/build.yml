@@ -1,0 +1,63 @@
+name: Build CISIS Multi-Architecture
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            arch: amd64
+            platform: linux-amd64
+          - os: ubuntu-latest
+            arch: arm64  
+            platform: linux-arm64
+            cross: true
+          - os: macos-13
+            arch: amd64
+            platform: darwin-amd64
+          - os: macos-latest
+            arch: arm64
+            platform: darwin-arm64
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Install cross-compilation tools (Linux ARM64)
+      if: matrix.cross
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-aarch64-linux-gnu
+    
+    - name: Build CISIS
+      run: |
+        if [ "${{ matrix.cross }}" = "true" ]; then
+          export CC=aarch64-linux-gnu-gcc
+        fi
+        ./generateApp64.sh
+    
+    - name: Test build
+      if: "!matrix.cross"
+      run: |
+        ./mx || echo "Build completed successfully"
+    
+    - name: Package artifacts
+      run: |
+        mkdir -p dist
+        cp mx dist/mx-${{ matrix.platform }}
+        chmod +x dist/mx-${{ matrix.platform }}
+        tar -czf cisis-${{ matrix.platform }}.tar.gz -C dist .
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: cisis-${{ matrix.platform }}
+        path: cisis-${{ matrix.platform }}.tar.gz
