@@ -345,6 +345,7 @@ CISIS/C++ DLL export
 #include <stdlib.h>
 #include <limits.h>
 #include <errno.h>
+#include <ctype.h>
 #endif
 
 #ifndef SIXTY_FOUR
@@ -467,7 +468,11 @@ CISIS/C++ DLL export
 #endif
 
 #if UNIX
+#ifdef __APPLE__
+#include <stdlib.h>
+#else
 #include <malloc.h>
+#endif
 #define ALLOC       malloc
 #define ALLOPARM    unsigned
 #define ALLOMAXV    INT_MAX /* 64000000L */ /* 64000L*/ /* 128000000L*/ /* UINT_MAX */
@@ -2391,8 +2396,8 @@ CIUTL.H
 #define SFLDCHR '^'
 
 #if PC || MPE
-#define OPENFCHR        '®'
-#define CLOSFCHR        '¯'
+#define OPENFCHR        'Â®'
+#define CLOSFCHR        'Â¯'
 #endif
 #if VAX
 #define OPENFCHR        '"'
@@ -2638,15 +2643,15 @@ CIB7.H
 #define B7EE_PFX        11
 
 
-/* estructura de la pila de ejecución */
+/* estructura de la pila de ejecuciÃ³n */
 typedef struct pdlstru {
    UCHR        *pdllvel;      /* bitstring, contiene la informacion de los postings. */
    LONGX        pdlleft;    /* cuanto queda del lvel */
    LONGX        pdldocs;    /* cantidad de documentos almacenados */
-   LONGX        pdllmfn;    /* valor del último MFN de la BD */
-   LONGX        pdlsize;    /* tamaño actual de lvel */
-   LONGX        pdlisiz;    /* tamaño inicial de lvel, also growing step */
-   short int   pdlplen;    /* tamaño de los postings */
+   LONGX        pdllmfn;    /* valor del Ãºltimo MFN de la BD */
+   LONGX        pdlsize;    /* tamaÃ±o actual de lvel */
+   LONGX        pdlisiz;    /* tamaÃ±o inicial de lvel, also growing step */
+   short int   pdlplen;    /* tamaÃ±o de los postings */
    char        *pdlnxtp;      /* proximo slot libre en lvel */
 } PDLSTRU;
 /*

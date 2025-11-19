@@ -964,7 +964,7 @@ printf("posthdr1 - hdrp=%p  segp=%p  IFHDRINFOS=%d\n",hdrp,segp,IFHDRINFOS);
     TRMptag=TRMpocc=TRMpcnt=0;
     TRMpcurr=TRMpchar=NULL; TRMpleft=0;
 #if !LIND
-    TRMpcblk=NULL; TRMpcpos=IFMAXTIV;
+    TRMpcblk=0; TRMpcpos=IFMAXTIV;
 #endif
     if (TRMrc == RCEOF)
 	return;
@@ -1112,9 +1112,9 @@ printf("posting - itrm=%"_LD_"  trmp=%p  rc=%d  nord=%"_LD_"  post=%"_LD_"/%"_LD
     if (nord == 0)
 	return(total);
     if (nord > total) {
-	TRMpost=TRMpmfn=NULL;
-	TRMptag=TRMpocc=TRMpcnt=NULL;
-	TRMpcurr=TRMpchar=NULL; TRMpleft=NULL;
+	TRMpost=TRMpmfn=0;
+	TRMptag=TRMpocc=TRMpcnt=0;
+	TRMpcurr=TRMpchar=0; TRMpleft=0;
 	return(-1L);
     }
     TRMpost++;
