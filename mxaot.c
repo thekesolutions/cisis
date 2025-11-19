@@ -1041,47 +1041,47 @@ if (cgitrace) {
             printf("    I/F keys        read I/F keys as mx input records \n\n");
             printf(" mx dict=cds k1=africa \"k2=african languages\" now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
             printf(" mfn=     2  \n");
-            printf("   1  ®AFRICAN LANGUAGES^l2^s17^t1^k2¯ \n");
+            printf("   1  Â®AFRICAN LANGUAGES^l2^s17^t1^k2Â¯ \n");
             printf(" \n");
             printf("    I/F postings    read I/F keys and postings as mx input records \n\n");
             printf(" mx dict=cds,1,2/3 k1=africa count=2 now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m97^t69^o1^c9^p1^k1¯ \n");
-            printf("   2  ®^m115^t24^o1^c3^p2^k1¯ \n");
-            printf("   2  ®^m115^t69^o1^c3^p3^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m97^t69^o1^c9^p1^k1Â¯ \n");
+            printf("   2  Â®^m115^t24^o1^c3^p2^k1Â¯ \n");
+            printf("   2  Â®^m115^t69^o1^c3^p3^k1Â¯ \n");
             printf(" mfn=     2  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m119^t69^o1^c7^p4^k1¯ \n");
-            printf("   2  ®^m125^t69^o1^c4^p5^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m119^t69^o1^c7^p4^k1Â¯ \n");
+            printf("   2  Â®^m125^t69^o1^c4^p5^k1Â¯ \n");
             printf(" \n");
             printf("    field add       field add w/ markup strip \n\n");
             printf(" mx null \"proc='<10>x<mark>y</mark>z</10>'\" \n");
 /*          printf(" mfn=     1 \n"); */
-            printf("  10  ®xyz¯ \n\n");
+            printf("  10  Â®xyzÂ¯ \n\n");
             printf("    procedures      up to %d proc= parameters, including fst, read, write, I/F update \n\n",MAXNPPP);
             printf(" mx cds \"proc='T99 2 (v69/)'\" \n");
 /*          printf(" mfn=     1 \n"); */
-            printf("  69  ®Paper on: <plant physiology><plant transpiration><measurement and instruments>¯ \n");
-            printf("  99  ®PLANT PHYSIOLOGY^m1^o1^c1^l2¯ \n");
-            printf("  99  ®PLANT TRANSPIRATION^m1^o1^c2^l2¯ \n");
-            printf("  99  ®MEASUREMENT AND INSTRUMENTS^m1^o1^c3^l2¯ \n\n");
+            printf("  69  Â®Paper on: <plant physiology><plant transpiration><measurement and instruments>Â¯ \n");
+            printf("  99  Â®PLANT PHYSIOLOGY^m1^o1^c1^l2Â¯ \n");
+            printf("  99  Â®PLANT TRANSPIRATION^m1^o1^c2^l2Â¯ \n");
+            printf("  99  Â®MEASUREMENT AND INSTRUMENTS^m1^o1^c3^l2Â¯ \n\n");
             printf(" mx null proc='Rcds,1' \n");
             printf(" mfn=     1 \n");
-            printf("  44  ®Methodology of plant eco-physiology: proceedings of the Montpellier Sympoium¯ \n");
-            printf("  50  ®Incl. bibl.¯ \n");
-            printf("  69  ®Paper on: <plant physiology><plant transpiration><measurement and instrumnts>¯ \n");
-            printf("  24  ®Techniques for the measurement of transpiration of individual plants¯ \n");
-            printf("  26  ®^aParis^bUnesco^c-1965¯ \n");
-            printf("  30  ®^ap. 211-224^billus.¯ \n");
-            printf("  70  ®Magalhaes, A.C.¯ \n");
-            printf("  70  ®Franco, C.M.¯ \n\n");
+            printf("  44  Â®Methodology of plant eco-physiology: proceedings of the Montpellier SympoiumÂ¯ \n");
+            printf("  50  Â®Incl. bibl.Â¯ \n");
+            printf("  69  Â®Paper on: <plant physiology><plant transpiration><measurement and instrumnts>Â¯ \n");
+            printf("  24  Â®Techniques for the measurement of transpiration of individual plantsÂ¯ \n");
+            printf("  26  Â®^aParis^bUnesco^c-1965Â¯ \n");
+            printf("  30  Â®^ap. 211-224^billus.Â¯ \n");
+            printf("  70  Â®Magalhaes, A.C.Â¯ \n");
+            printf("  70  Â®Franco, C.M.Â¯ \n\n");
             printf(" mx null proc='a10/1/' proc='Xdbn1' \n");
             printf(" mx dbn1 \n");
             printf(" mfn= 1 \n");
-            printf(" 10 «1» \n\n");
+            printf(" 10 Â«1Â» \n\n");
             printf(" del lilacs_year_*.mst \n");
             printf(" del lilacs_year_*.xrf \n");
             printf(" mx lilacs proc='Xappend=lilacs_year_',v64.4 \n\n");
@@ -1099,23 +1099,23 @@ if (cgitrace) {
 #if MORE1
             printf(" mx null proc='a10/1/' create=x \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®1¯ \n");
+            printf("  10  Â®1Â¯ \n");
             printf(" mx null proc='a20/2/' append=x \n");
 /*            printf(" mfn=     1 \n"); */
-            printf("  20  ®2¯ \n");
+            printf("  20  Â®2Â¯ \n");
             printf(" mx null proc='Rx,1' proc='Rx,2' \n");
 /*            printf(" mfn=     1 \n"); */
-            printf("  10  ®1¯ \n");
-            printf("  20  ®2¯ \n\n");
+            printf("  10  Â®1Â¯ \n");
+            printf("  20  Â®2Â¯ \n\n");
 
             printf(" mx null proc='a10/1/' proc='Xdbn1' proc='a20/2/' proc='Xdbn2' \n");
             printf(" mx dbn1 \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®1¯ \n");
+            printf("  10  Â®1Â¯ \n");
             printf(" mx dbn2 \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®1¯ \n");
-            printf("  20  ®2¯ \n\n");
+            printf("  10  Â®1Â¯ \n");
+            printf("  20  Â®2Â¯ \n\n");
             printf(" @echo 'd*a32701~',,mstname,,'^m',,f(mfn,8,0),,'~',, >p0 \n");
             printf(" @echo '=',,ref(['mstxrf']1,f(maxmfn,1,0)) >p1 \n");
             printf(" @echo if l(['mstxrf']v32701)=0 then 'Xmstxrf' fi >p2 \n");
@@ -1134,15 +1134,15 @@ if (cgitrace) {
             printf("    cipar           strip <markup> marks during fst \n\n");
             printf(" set echo ci_fststrip=32000 >xcip \n");
             printf(" mx cds \n");
-            printf("  69  ®Paper on: <plant physiology><plant transpiration><measurement and instruments>¯ \n");
+            printf("  69  Â®Paper on: <plant physiology><plant transpiration><measurement and instruments>Â¯ \n");
             printf(" mx cipar=xcip cds \"fst=690 4 v69\" \n");
-            printf("  69  ®Paper on:                                                                     ¯ \n");
-            printf(" 690  ®PAPER^m1^o1^c1^l1¯ \n");
-            printf(" 690  ®ON^m1^o1^c2^l1¯ \n\n");
+            printf("  69  Â®Paper on:                                                                     Â¯ \n");
+            printf(" 690  Â®PAPER^m1^o1^c1^l1Â¯ \n");
+            printf(" 690  Â®ON^m1^o1^c2^l1Â¯ \n\n");
 #endif /* CIFS */
             printf("    fst             indexing technique to extract text within <mark> and </mark> \n\n");
             printf(" mx null \"fst=1 2000 '#<B>#','text <B>text1</B> text <B>text2</B> text'\" \n");
-            printf("   1  ®TEXT1TEXT2^m1^o1^c1^l1¯ \n\n");
+            printf("   1  Â®TEXT1TEXT2^m1^o1^c1^l1Â¯ \n\n");
             printf("    format          read a stdin input line as a new field occurrence \n\n");
             printf(" mx null to=2 \"pft=if mfn=1 then _10,putenv('TAG10='v10) fi,,mfn,x1,getenv('TAG10'),/ \n");
             printf(" input line \n");
@@ -1211,43 +1211,43 @@ printf(".pft \n\n");
             printf("    <ptag> has the form ^m=mfn ^t=tag ^o=occ ^c=cnt ^ppstorder ^kkeyorder \n\n");
             printf(" mx dict=cds k1=africa \"k2=african languages\" now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
             printf(" mfn=     2  \n");
-            printf("   1  ®AFRICAN LANGUAGES^l2^s17^t1^k2¯ \n\n");
+            printf("   1  Â®AFRICAN LANGUAGES^l2^s17^t1^k2Â¯ \n\n");
             printf(" mx dict=cds,1,2 k1=africa count=1 now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m97^t69^o1^c9^p1^k1¯ \n");
-            printf("   2  ®^m115^t24^o1^c3^p2^k1¯ \n");
-            printf("   2  ®^m115^t69^o1^c3^p3^k1¯ \n");
-            printf("   2  ®^m119^t69^o1^c7^p4^k1¯ \n");
-            printf("   2  ®^m125^t69^o1^c4^p5^k1¯ \n\n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m97^t69^o1^c9^p1^k1Â¯ \n");
+            printf("   2  Â®^m115^t24^o1^c3^p2^k1Â¯ \n");
+            printf("   2  Â®^m115^t69^o1^c3^p3^k1Â¯ \n");
+            printf("   2  Â®^m119^t69^o1^c7^p4^k1Â¯ \n");
+            printf("   2  Â®^m125^t69^o1^c4^p5^k1Â¯ \n\n");
             printf(" mx dict=cds,1,2/3 k1=africa count=2 now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m97^t69^o1^c9^p1^k1¯ \n");
-            printf("   2  ®^m115^t24^o1^c3^p2^k1¯ \n");
-            printf("   2  ®^m115^t69^o1^c3^p3^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m97^t69^o1^c9^p1^k1Â¯ \n");
+            printf("   2  Â®^m115^t24^o1^c3^p2^k1Â¯ \n");
+            printf("   2  Â®^m115^t69^o1^c3^p3^k1Â¯ \n");
             printf(" mfn=     2  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m119^t69^o1^c7^p4^k1¯ \n");
-            printf("   2  ®^m125^t69^o1^c4^p5^k1¯ \n\n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m119^t69^o1^c7^p4^k1Â¯ \n");
+            printf("   2  Â®^m125^t69^o1^c4^p5^k1Â¯ \n\n");
             printf(" mx dict=cds,1,2/1 k1=africa count=5 now  \n");
             printf(" mfn=     1  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m97^t69^o1^c9^p1^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m97^t69^o1^c9^p1^k1Â¯ \n");
             printf(" mfn=     2  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m115^t24^o1^c3^p2^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m115^t24^o1^c3^p2^k1Â¯ \n");
             printf(" mfn=     3  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m115^t69^o1^c3^p3^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m115^t69^o1^c3^p3^k1Â¯ \n");
             printf(" mfn=     4  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m119^t69^o1^c7^p4^k1¯ \n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m119^t69^o1^c7^p4^k1Â¯ \n");
             printf(" mfn=     5  \n");
-            printf("   1  ®AFRICA^l1^s6^t5^k1¯ \n");
-            printf("   2  ®^m125^t69^o1^c4^p5^k1¯ \n\n");
+            printf("   1  Â®AFRICA^l1^s6^t5^k1Â¯ \n");
+            printf("   2  Â®^m125^t69^o1^c4^p5^k1Â¯ \n\n");
 #if TBISNEW
             printf("tb=<tag>^hsave data fields as individual files^xx \n\n");
             printf("    <tag>           field tag \n\n");
@@ -1275,33 +1275,33 @@ printf(".pft \n\n");
 ver se altercao acima nao estorou linha do browser
 C:\cid>mx null count=1 "proc='<10>x<mark>y</mark>z</10>'"
 mfn=     1
- 10  «xyz»
+ 10  Â«xyzÂ»
 
 C:\cid>mx null count=1 "proc='<10 0>x<mark>y</mark>z</10>'"
 mfn=     1
- 10  «x<mark>y</mark>z»
+ 10  Â«x<mark>y</mark>zÂ»
 
 C:\cid>mx null count=1 "proc='<10 5>x<mark>y</mark>z</10>'"
 mfn=     1
- 10  «x<mark>y</mark>z»
+ 10  Â«x<mark>y</mark>zÂ»
 
 C:\cid>mx null count=1 "proc='<10 6>x<mark>y</mark>z</10>'"
 mfn=     1
- 10  «xy</mark>z»
+ 10  Â«xy</mark>zÂ»
 
 C:\cid>mx null count=1 "proc='<10 7>x<mark>y</mark>z</10>'"
 mfn=     1
- 10  «xyz»
+ 10  Â«xyzÂ»
 #endif
             printf(" mx null \"proc='<10>text</10>'\" \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®text¯ \n\n");
+            printf("  10  Â®textÂ¯ \n\n");
             printf(" mx null \"proc='<10>x<mark>y</mark>z</10>'\" \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®xyz¯ \n\n");
+            printf("  10  Â®xyzÂ¯ \n\n");
             printf(" mx null \"proc='<10 99 3>x<mark>y</mark>z</10>'\" \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®xyz¯ \n");
+            printf("  10  Â®xyzÂ¯ \n");
             printf(" mx null \"proc='<10 99 4>x<mark>y</mark>z</10>'\" \n");
             printf(" mfn=     1 \n\n");
 #if GENPROCT
@@ -1311,15 +1311,15 @@ mfn=     1
             printf("    command T/h=<fst> stands for full-length key extraction \n\n");
             printf(" mx cds \"proc='T99 0 (v70/)'\" \n");
             printf(" mfn=     1 \n");
-            printf("  70  ®Magalhaes, A.C.¯ \n");
-            printf("  70  ®Franco, C.M.¯ \n");
-            printf("  99  ®MAGALHAES, A.C.^m1^o1^c1^l2¯ \n");
-            printf("  99  ®FRANCO, C.M.^m1^o1^c2^l2¯ \n\n");
+            printf("  70  Â®Magalhaes, A.C.Â¯ \n");
+            printf("  70  Â®Franco, C.M.Â¯ \n");
+            printf("  99  Â®MAGALHAES, A.C.^m1^o1^c1^l2Â¯ \n");
+            printf("  99  Â®FRANCO, C.M.^m1^o1^c2^l2Â¯ \n\n");
             printf(" mx cds \"proc='T/h=0 0 (v70/)'\" \n");
             printf(" mfn=     1 \n");
-            printf(" 32767  ®Magalhaes, A.C. \n");
+            printf(" 32767  Â®Magalhaes, A.C. \n");
             printf(" Franco, C.M. \n");
-            printf(" ¯ \n\n");
+            printf(" Â¯ \n\n");
             printf(" echo PLANT PHYSIOLOGY>x \n");
             printf(" echo PLANT TRANSPIRATION>>x \n");
             printf(" mx seq=x -all now \"fst=1 0 v1\" ifupd/create=thes \n");
@@ -1327,10 +1327,10 @@ mfn=     1
 */
             printf(" mx cds \"proc='T99 2 (v69/)'\" \"pft=(if l(['thes']v99^*)=0 then 'not in thes: 'v99^*/ fi)\" \n");
             printf(" mfn=     1 \n");
-            printf("  69  ®Paper on: <plant physiology><plant transpiration><measurement and instruments>¯ \n");
-            printf("  99  ®PLANT PHYSIOLOGY^m1^o1^c1^l2¯ \n");
-            printf("  99  ®PLANT TRANSPIRATION^m1^o1^c2^l2¯ \n");
-            printf("  99  ®MEASUREMENT AND INSTRUMENTS^m1^o1^c3^l2¯ \n");
+            printf("  69  Â®Paper on: <plant physiology><plant transpiration><measurement and instruments>Â¯ \n");
+            printf("  99  Â®PLANT PHYSIOLOGY^m1^o1^c1^l2Â¯ \n");
+            printf("  99  Â®PLANT TRANSPIRATION^m1^o1^c2^l2Â¯ \n");
+            printf("  99  Â®MEASUREMENT AND INSTRUMENTS^m1^o1^c3^l2Â¯ \n");
             printf(" not it thes: MEASUREMENT AND INSTRUMENTS \n\n");
 #endif /* GENPROCT */
             printf("proc=R<dbn>,<mfn>^hproc=R to add data of another record^xx \n\n");
@@ -1339,16 +1339,16 @@ mfn=     1
             printf("    add to MFR all data fields of active record <dbn>,<mfn> \n\n");
             printf(" mx null proc='a10/1/a20/1/' create=x \n");
 /*            printf(" mfn=     1 \n"); */
-            printf("  10  ®1¯ \n");
-            printf("  20  ®1¯ \n");
+            printf("  10  Â®1Â¯ \n");
+            printf("  20  Â®1Â¯ \n");
             printf(" mx null proc='a20/2/' append=x \n");
 /*            printf(" mfn=     1 \n"); */
-            printf("  20  ®2¯ \n");
+            printf("  20  Â®2Â¯ \n");
             printf(" mx null proc='Rx,1' proc='Rx,2' \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®1¯ \n");
-            printf("  20  ®1¯ \n");
-            printf("  20  ®2¯ \n\n");
+            printf("  10  Â®1Â¯ \n");
+            printf("  20  Â®1Â¯ \n");
+            printf("  20  Â®2Â¯ \n\n");
             printf("proc=X[{create|copy|append|merge}=]<out_dbn>^hproc=X to write an output record^xx \n\n");
             printf("    <out_dbn>       output master file name \n\n");
             printf("    create <out_dbn> if does not exist \n");
@@ -1358,11 +1358,11 @@ mfn=     1
             printf(" mx null proc='a10/1/' proc='Xdbn1' proc='a20/2/' proc='=3' proc='Xdbn2' \n");
             printf(" mx dbn1 \n");
             printf(" mfn=     1 \n");
-            printf("  10  ®1¯ \n");
+            printf("  10  Â®1Â¯ \n");
             printf(" mx dbn2 \n");
             printf(" mfn=     3 \n");
-            printf("  10  ®1¯ \n");
-            printf("  20  ®2¯ \n\n");
+            printf("  10  Â®1Â¯ \n");
+            printf("  20  Â®2Â¯ \n\n");
             printf(" echo replace(replace(s(v70[1].8),',','-'),' ','+') >xfile.pft \n");
             printf(" mx cds proc='Xappend='@xfile.pft, pft=mfn,x1,v70[1]/ \n");
             printf(" 000001 Magalhaes, A.C. \n");
@@ -1425,19 +1425,19 @@ mfn=     1
             printf(" @rem \n");
             printf(" mx %1 MF1 now proc=@p1 proc=@p2a proc=@p2b proc=@p2c proc=@p3a proc=@p3b proc=@p3c \n");
             printf(" @rem mfn=     1 \n");
-            printf(" @rem 32701  ®MF1^m       1¯ \n");
-            printf(" @rem   1  ®master 1¯ \n");
-            printf(" @rem   2  ®registro 1¯ \n");
+            printf(" @rem 32701  Â®MF1^m       1Â¯ \n");
+            printf(" @rem   1  Â®master 1Â¯ \n");
+            printf(" @rem   2  Â®registro 1Â¯ \n");
             printf(" @rem mfn=     2 \n");
-            printf(" @rem 32701  ®MF1^m       1¯ \n");
-            printf(" @rem   1  ®master 1¯ \n");
-            printf(" @rem   2  ®registro 2¯ \n");
+            printf(" @rem 32701  Â®MF1^m       1Â¯ \n");
+            printf(" @rem   1  Â®master 1Â¯ \n");
+            printf(" @rem   2  Â®registro 2Â¯ \n");
             printf(" @rem \n");
             printf(" mx %1 MF2 now proc=@p1 proc=@p2a proc=@p2b proc=@p2c proc=@p3a proc=@p3b proc=@p3c \n");
             printf(" @rem mfn=     3 \n");
-            printf(" @rem 32701  ®MF2^m       1¯ \n");
-            printf(" @rem  10  ®master 2¯ \n");
-            printf(" @rem  20  ®registro 1¯ \n");
+            printf(" @rem 32701  Â®MF2^m       1Â¯ \n");
+            printf(" @rem  10  Â®master 2Â¯ \n");
+            printf(" @rem  20  Â®registro 1Â¯ \n");
             printf(" @rem \n");
             printf(" @pause \n");
             printf(" @echo Create default display format for centralized record number M/F.. \n");
@@ -1555,15 +1555,15 @@ mfn=     1
             printf(" echo ci_fststrip=21 >xcip\n");
             printf(" mx cds \n");
             printf(" mfn=     1 \n");
-            printf("  69  ®Paper on: <plant physiology><plant transpiration><measurement and instruments>¯ \n");
+            printf("  69  Â®Paper on: <plant physiology><plant transpiration><measurement and instruments>Â¯ \n");
             printf(" mx cipar=xcip cds \"fst=690 4 v69\" \n");
             printf(" mfn=     1 \n");
-            printf("  69  ®Paper on: <measurement and instruments>                                       ¯ \n");
-            printf(" 690  ®PAPER^m1^o1^c1^l1¯ \n");
-            printf(" 690  ®ON^m1^o1^c2^l1¯ \n");
-            printf(" 690  ®MEASUREMENT^m1^o1^c3^l2¯ \n");
-            printf(" 690  ®AND^m1^o1^c4^l1¯ \n");
-            printf(" 690  ®INSTRUMENTS^m1^o1^c5^l2¯ \n");
+            printf("  69  Â®Paper on: <measurement and instruments>                                       Â¯ \n");
+            printf(" 690  Â®PAPER^m1^o1^c1^l1Â¯ \n");
+            printf(" 690  Â®ON^m1^o1^c2^l1Â¯ \n");
+            printf(" 690  Â®MEASUREMENT^m1^o1^c3^l2Â¯ \n");
+            printf(" 690  Â®AND^m1^o1^c4^l1Â¯ \n");
+            printf(" 690  Â®INSTRUMENTS^m1^o1^c5^l2Â¯ \n");
 #endif /* CIFS */
             printf("fst=<id> 2000+<it> <fmt>^uy^hfst/IT 2000 to extract text within <mark> and </mark>^xx \n\n");
             printf("    <id>            tag component \n");
@@ -1572,8 +1572,8 @@ mfn=     1
             printf("    apply indexing technique IT to text embedded in marks <mark> and </mark> \n\n");
             printf(" mx null \"fst=2 2004 '#<B>#','xxx <B>word1 word2</B> xxx'\" \n");
             printf(" mfn=     1 \n");
-            printf("   2  ®WORD^m1^o1^c1^l1¯ \n");
-            printf("   2  ®WORD^m1^o1^c2^l1¯ \n\n");
+            printf("   2  Â®WORD^m1^o1^c1^l1Â¯ \n");
+            printf("   2  Â®WORD^m1^o1^c2^l1Â¯ \n\n");
             printf("pft=_<tag>^uy^hpft=_ to input data from stdin^xx \n\n");
             printf("    <tag>           field tag \n\n");
             printf("    read a stdin input line and add the input data as a new occurrence of field <tag> \n\n");
@@ -3270,7 +3270,8 @@ LOOP:
                 n=1;
                 if (parmtextp && !mxtext_found) n=0;
                 if (n) {
-                    printf(prompt1p); isxp=gets(line); p=isxp;
+                    printf(prompt1p); isxp=fgets(line, sizeof(line), stdin); 
+                    if (isxp && isxp[strlen(isxp)-1] == '\n') isxp[strlen(isxp)-1] = '\0'; p=isxp;
                     if (ISX(p)) break;
                     if (p) if (*p) { if (mxbool(xmxp,p,dbnp)) MXEXIT(1); count=0; goto LOOP; }
                 }
@@ -3869,7 +3870,8 @@ if ((parmkpostings && TRMpost < TRMxytotp) && (TRMpost%parmkkeep2 != 0)) goto KL
                     n=1;
                     if (parmsyss) {
                         printf("%s\n",shp);
-                        printf(prompt1p); isxp=gets(line); q=isxp;
+                        printf(prompt1p); isxp=fgets(line, sizeof(line), stdin); 
+                        if (isxp && isxp[strlen(isxp)-1] == '\n') isxp[strlen(isxp)-1] = '\0'; q=isxp;
                         if (ISX(q)) n=0;
                     }
                     if (n) system(shp);
@@ -4077,7 +4079,8 @@ if ((parmkpostings && TRMpost < TRMxytotp) && (TRMpost%parmkkeep2 != 0)) goto KL
 
     if (parmwait && boolqryp != NULL) {
         do {
-            printf(prompt2p); isxp=gets(line); p=isxp;
+            printf(prompt2p); isxp=fgets(line, sizeof(line), stdin); 
+            if (isxp && isxp[strlen(isxp)-1] == '\n') isxp[strlen(isxp)-1] = '\0'; p=isxp;
             if (!p) break;
         } while (!*p);
         if (ISX(p) || !p)
